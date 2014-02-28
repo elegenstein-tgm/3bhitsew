@@ -15,7 +15,7 @@ public class Test {
 	 */
 	public static void main(String[] args) {
 		String name = changer(JOptionPane.showInputDialog("Name"));
-		JOptionPane.showMessageDialog(null, "Hallo" + name);
+		JOptionPane.showMessageDialog(null, "Hallo " + name);
 
 	}
 	private static String changer(String s){
