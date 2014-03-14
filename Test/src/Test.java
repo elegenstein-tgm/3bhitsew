@@ -1,5 +1,4 @@
 import javax.swing.JOptionPane;
-
 /**
  * 
  */
@@ -18,7 +17,7 @@ public class Test {
 		JOptionPane.showMessageDialog(null, "Hallo " + name);
 
 	}
-	private static String changer(String s){
+	public static String changer(String s){
 		if(s.contains("Gerald")==true){
 			s = s.replace("Gerald", "du scheisskind");
 		}
