@@ -1,0 +1,62 @@
+import java.awt.BorderLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+/**
+ * 
+ */
+
+/**
+ * @author Julian Plueger
+ *
+ */
+public class SSPView extends JFrame {
+	public JPanel top, ml, mc,mr,bot,uc;
+	private JButton load, save,stein,schere,papier;
+	protected int win, lose;
+	public JLabel Spielstand = new JLabel();
+	public JButton cchoosen = new JButton("");
+	private SSPControl c= new SSPControl();
+	public SSPView(){
+		super("Schere-Stein-Papier");
+		init();
+		setVisible(true);
+		setSize(1000, 1000);
+	}
+	public void init(){
+		bot = new JPanel(new BorderLayout());
+		load = new JButton("Load");
+		save = new JButton("Save");
+		load.addActionListener(c);
+		save.addActionListener(c);
+		Spielstand = new JLabel("");
+		bot.add(load,"East");
+		bot.add(save,"West");
+		bot.add(Spielstand,BorderLayout.CENTER);
+		this.setLayout(new BorderLayout());
+		this.add(bot,"South");
+		mc = new JPanel(new BorderLayout());
+		uc = new JPanel(new BorderLayout());
+		stein = new JButton("Stein");
+		stein.addActionListener(c);
+		schere = new JButton("Schere");
+		schere.addActionListener(c);
+		papier = new JButton("Papier");
+		papier.addActionListener(c);
+		uc.add(schere, "North");
+		uc.add(stein, "Center");
+		uc.add(papier, "South");
+		mc.add(uc,"Center");
+		mc.add(cchoosen,"East");
+		this.add(mc,"Center");
+		top = new JPanel();
+		this.add(top,"North");
+		
+	}
+	public static void main(String[] args){
+		new SSPView();
+	}
+}

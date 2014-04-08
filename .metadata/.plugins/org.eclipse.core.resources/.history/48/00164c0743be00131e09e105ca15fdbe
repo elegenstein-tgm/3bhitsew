@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+
+/**
+ * @author Erik
+ *
+ */
+public class SubstiutionCipher {
+	public SubstitutionCipher(String secretAlphabet){
+		
+	}
+}

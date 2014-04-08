@@ -1,0 +1,13 @@
+import javax.swing.JFrame;
+
+/**
+ * 
+ */
+
+/**
+ * @author Erik
+ *
+ */
+public class SSPView extends JFrame {
+
+}
