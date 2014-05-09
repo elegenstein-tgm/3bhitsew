@@ -1,0 +1,39 @@
+
+public class EigeneVerschluesselung implements Cipher {
+	public int x = 5;
+	public void setX(int x){this.x=x;}
+	public String encrypt(String text){
+		return crypt(text,x);
+	}
+	public String decrypt(String text){
+
+	}
+
+	private String crypt(String text, int level){
+
+		int rowcount = 0;
+		if(text.length() % level !=0){
+			rowcount = text.length() / level;
+			rowcount++;
+		}else{
+			rowcount = text.length() / level;
+		}
+		char[][] tab = new char[rowcount][level];
+		int pointer = 0;
+		for(int i = 0; i<rowcount; i++){
+			for(int a = 0; a<level;a++){
+				tab[i][a]=text.charAt(pointer);
+				tab[i][a] += level;
+				pointer++;
+			}
+		}
+		String rtext = "";
+		for(int a = 0; a<level;a++){
+			for(int i = 0; i<rowcount; i++){
+				rtext += tab[i][a];
+				
+			}
+		}
+		return rtext;
+	}
+}
