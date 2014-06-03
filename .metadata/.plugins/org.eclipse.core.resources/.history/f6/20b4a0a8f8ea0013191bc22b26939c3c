@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package abstractGame;
+
+/**
+ * @author Erik
+ *
+ */
+public class Tuer extends GameObject {
+
+}

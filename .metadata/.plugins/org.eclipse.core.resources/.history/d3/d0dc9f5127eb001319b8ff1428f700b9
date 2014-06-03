@@ -1,0 +1,69 @@
+/**
+ * 
+ */
+package ebraendli;
+
+import java.util.LinkedList;
+import java.util.*;
+
+/**
+ * @author Erik
+ * @param <T> Typ des Stacks
+ *
+ */
+public class Stack<T> {
+	
+	public <T>Stack() {
+		ll= new LinkedList<>();
+		ll.addFirst(null);
+	}
+	/**
+	 * gibt das oberste Element zurück
+	 * @return das oberste Element
+	 */
+	public T peek(){
+		
+		Iterator<T> i =  ll.iterator();
+		if(i.hasNext()){
+			return ll.getFirst();
+		}
+		
+		return null;
+	}
+	
+	/**
+	 * gibt das oberste Element zurück und entfernt es danach
+	 * @return oberste Element 
+	 */
+	public T pop(){
+		Iterator<T> i =  ll.iterator();
+		if(i.hasNext()){
+			T r= ll.getFirst();
+			ll.removeFirst();
+			return r;
+		}
+		return null;
+	}
+	/**
+	 * @param element auf den Stack zu pushendes Element muss vom Type <T> sein
+	 */
+	public void push(T element){
+		ll.addFirst(element);
+	}
+	LinkedList<T> ll;
+	
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Stack<Integer> s = new Stack<>();
+		s.push(2);
+		System.out.println( s.pop());
+		System.out.println( s.pop());
+		System.out.println( s.peek());
+		
+
+	}
+
+}

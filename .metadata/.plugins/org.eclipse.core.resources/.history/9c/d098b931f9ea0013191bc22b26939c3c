@@ -1,0 +1,5 @@
+package abstractGame;
+
+public class Key extends GameObject {
+
+}

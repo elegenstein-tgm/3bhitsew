@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package abstractGame;
+
+/**
+ * @author Erik
+ *
+ */
+public class TryMain {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		GameObject d[] = new Tuer[3];
+		
+
+	}
+
+}

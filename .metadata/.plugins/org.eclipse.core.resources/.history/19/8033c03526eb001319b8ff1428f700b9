@@ -1,0 +1,51 @@
+/**
+ * 
+ */
+package ebraendli;
+
+import java.util.LinkedList;
+import java.util.*;
+
+/**
+ * @author Erik
+ * @param <T>
+ *
+ */
+public class Stack<T> {
+	
+	public <T>Stack() {
+		ll= new LinkedList<>();
+		ll.addFirst(null);
+	}
+	public T peek(){
+		
+		Iterator<T> i =  ll.iterator();
+		if(i.hasNext()){
+			return ll.getFirst();
+		}
+		
+		return null;
+	}
+	
+	public T pop(){
+		Iterator<T> i =  ll.iterator();
+		if(i.hasNext()){
+			T r= ll.getFirst();
+			ll.removeFirst();
+			return r;
+		}
+		return null;
+	}
+
+	LinkedList<T> ll;
+	
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

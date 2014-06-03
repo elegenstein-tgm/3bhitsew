@@ -1,0 +1,47 @@
+/**
+ * 
+ */
+package abstractGame;
+
+import javax.swing.JOptionPane;
+
+/**
+ * @author Erik
+ *
+ */
+public class TryMain {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		GameObject d[] = new Tuer[3];
+		GameObject k[] = new Key[3];
+		for(int i = 0; i < d.length; i++){
+			d[i] = new Tuer();
+			k[i] = new Key();
+			((Tuer)d[i]).id = i;
+			((Key)k[i]).id = i;
+			((Key)k[i]).isBroken = false;
+		}
+		int i = Integer.parseInt(JOptionPane.showInputDialog("du stehst an der ersten der 3 Türen,\ndu hast 3 Schlüssel welchen probierst du?"));
+		if(k[i].useOn(d[0])){
+			JOptionPane.showMessageDialog(null, "Türe geöfnet");
+		}else{
+			JOptionPane.showMessageDialog(null, "Schlüssel abgebrochen");
+		}
+		i = Integer.parseInt(JOptionPane.showInputDialog("du stehst an der zweiten der 3 Türen,\ndu hast 3 Schlüssel welchen probierst du?"));
+		if(k[i].useOn(d[1])){
+			JOptionPane.showMessageDialog(null, "Türe geöfnet");
+		}else{
+			JOptionPane.showMessageDialog(null, "Schlüssel abgebrochen");
+		}
+		i = Integer.parseInt(JOptionPane.showInputDialog("du stehst an der dritten der 3 Türen,\ndu hast 3 Schlüssel welchen probierst du?"));
+		if(k[i].useOn(d[2])){
+			JOptionPane.showMessageDialog(null, "Türe geöfnet");
+		}else{
+			JOptionPane.showMessageDialog(null, "Schlüssel abgebrochen");
+		}
+	}
+
+}

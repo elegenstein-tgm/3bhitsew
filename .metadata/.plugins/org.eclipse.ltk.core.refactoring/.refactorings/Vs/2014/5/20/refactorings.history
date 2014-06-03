@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 4 elements to &apos;Vs/src/braendli.cipher&apos;&#x0D;&#x0A;- Original project: &apos;Vs&apos;&#x0D;&#x0A;- Destination element: &apos;Vs/src/braendli.cipher&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     SubstitutionCipher.java&#x0D;&#x0A;     Cipher.java&#x0D;&#x0A;     MonoAlpabethicCipher.java&#x0D;&#x0A;     EigeneVerschluesselung.java&#x0D;&#x0A;- Update references to refactored element" description="Move compilation units" destination="/src&lt;braendli.cipher" element1="/src&lt;{SubstitutionCipher.java" element2="/src&lt;{Cipher.java" element3="/src&lt;{MonoAlpabethicCipher.java" element4="/src&lt;{EigeneVerschluesselung.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1400228156317" units="4" version="1.0"/>
+</session>

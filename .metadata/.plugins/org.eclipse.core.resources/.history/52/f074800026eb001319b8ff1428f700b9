@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+package ebraendli;
+
+import java.util.LinkedList;
+
+/**
+ * @author Erik
+ * @param <T>
+ *
+ */
+public class Stack<T> {
+	
+	public <T>Stack() {
+		ll= new LinkedList<T>();
+	}
+
+
+	LinkedList<> ll;
+	
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
