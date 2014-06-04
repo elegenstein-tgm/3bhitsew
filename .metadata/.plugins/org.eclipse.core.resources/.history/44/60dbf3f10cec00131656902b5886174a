@@ -1,0 +1,21 @@
+
+public class CodeBrett {
+	
+	private char[] code = new char[4];
+	private char[][] userset = new char[7][4];
+	private int roundc = 0;
+	
+	
+	public CodeBrett(char a, char b, char c, char d) {
+		this.setCode(a,b,c,d);
+	}
+	public void setCode(char a, char b, char c, char d){
+		code[0]=a;
+		code[1]=b;
+		code[2]=c;
+		code[3]=d;
+	}
+	
+	
+	
+}

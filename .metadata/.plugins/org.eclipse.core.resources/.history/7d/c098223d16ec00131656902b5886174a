@@ -1,0 +1,40 @@
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+
+public class View extends JFrame implements ActionListener{
+
+	public CodeBrett cb;
+	private MMV vHC =new MMV();
+	private JPanel sC = new JPanel(new GridLayout(4, 1));
+	private JButton[] buttons= new JButton[4];
+	private int bstate[] = new int[4];
+	private String[] Farben = {"ROT", "GELB", "GRUEN", "BLAU","VIOLET","SCHWARZ"};
+	public View(){
+		super();
+		this.setLayout(new BorderLayout());
+		this.setDefaultCloseOperation(3);
+		
+	}
+	private void loadUP(){
+		for(int i = 0; i < this.buttons.length;i++){
+			buttons[i] = new JButton(this.Farben[0]);
+			bstate[i]= 0;
+			buttons[i].addActionListener(this);
+			sC.add(buttons[i]);
+		}
+		this.add(sC, "South");
+		
+	}
+
+	
+	public class MMV extends JPanel{
+		
+	}
+
+}

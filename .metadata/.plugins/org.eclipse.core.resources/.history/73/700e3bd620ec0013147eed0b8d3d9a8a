@@ -1,0 +1,112 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+
+public class View extends JFrame implements ActionListener{
+
+	public CodeBrett cb;
+	private MMV vHC =new MMV();
+	private JPanel sC = new JPanel(new GridLayout(1, 5));
+	private JButton[] buttons= new JButton[5];
+	private int bstate[] = new int[4];
+	private String[] Farben = {"ROT", "GELB", "GRUEN", "BLAU","VIOLET","SCHWARZ"};
+	public View(){
+		super();
+		this.setLayout(new BorderLayout());
+		this.setDefaultCloseOperation(3);
+		this.loadUP();
+
+	}
+	private void loadUP(){
+		for(int i = 0; i < this.buttons.length-1;i++){
+			buttons[i] = new JButton(this.Farben[0]);
+			bstate[i]= 0;
+			buttons[i].addActionListener(this);
+			sC.add(buttons[i]);
+		}
+		buttons[4]=new JButton("Set");
+		buttons[4].addActionListener(this);
+		sC.add(buttons[4]);
+		this.add(sC, "South");
+		this.add(vHC,"Center");
+		
+	}
+
+
+	public class MMV extends JPanel{
+
+		private int countc = 0;
+		private Color[] paintt= new Color[6];
+		private int[] pointsx = new int[4]; 
+		private int[] pointsy = new int[7];
+		public MMV(){
+			super();
+			paintt[0] = new Color(255,0,0);
+			paintt[1] = new Color(255,255,0);
+			paintt[2] = new Color(0,255,0);
+			paintt[3] = new Color(0,0,255);
+			paintt[4] = new Color(255,0,255);
+			paintt[5] = new Color(0,0,0);
+
+			for(int j = 0; j<pointsx.length;j++){
+				pointsx[j] = 55 + (j*50);
+				pointsy[j] = 55 + (j*50);
+			}
+		}
+		public void paint(Graphics g){
+			char[] bz ;
+			for(int i = 0; i < countc;i++){
+				if(countc > i){
+					bz =cb.getColors(i);
+					for(int j = 0; j < bz.length;j++){
+						g.setColor(paintt[bz[0]-'A']);
+						g.fillOval(pointsx[j],pointsy[i],40,40);
+					}
+				}
+			}
+		}
+		public void raisec(){
+			countc++;
+		}
+	}
+
+	public void cButton(int button){
+		bstate[button]++;
+		if(bstate[button]>5){
+			bstate[button]=0;
+		}
+		buttons[button].setText(Farben[bstate[button]]);
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getActionCommand()=="Set"){
+			System.out.println(cb.choose(new char[]{(char) (bstate[0]+'A'),(char) (bstate[1]+'A'),(char) (bstate[2]+'A'),(char) (bstate[3]+'A')})[0]);
+			vHC.repaint();
+			this.repaint();		
+			
+		}else{
+			if(((JButton)e.getSource())== buttons[3])
+				cButton(3);
+			if(((JButton)e.getSource())== buttons[2])
+				cButton(2);
+			if(((JButton)e.getSource())== buttons[1])
+				cButton(1);
+			if(((JButton)e.getSource())== buttons[0])
+				cButton(0);
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		new View();
+	}
+
+}

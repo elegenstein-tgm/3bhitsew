@@ -1,0 +1,20 @@
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+
+public class View extends JFrame {
+
+	public CodeBrett cb;
+	private JPanel vHC =new JPanel();
+	private JPanel sC = new JPanel(new GridLayout(4, 1));
+	
+	public View(){
+		this.setLayout(new BorderLayout());
+		this.setDefaultCloseOperation(3);
+		
+	}
+
+}
