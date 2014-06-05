@@ -1,16 +1,17 @@
 
 public class Controler {
-	private View v;
+	public View v;
 	public Controler() {
 		v =new View();
-		v.cb = new CodeBrett('A', 'B', 'C', 'D');
 		v.setVisible(true);
 	}
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		new Controler();
+		
+		Controler c = new Controler();
+		c.v.cb = new CodeBrett('A', 'B', 'C', 'D');
 
 	}
 

@@ -1,11 +1,12 @@
 import javax.swing.JOptionPane;
+import javax.swing.RepaintManager;
 
 
 public class CodeBrett {
 
 	private char[] code = new char[4];
 	private char[][] userset = new char[7][4];
-	private int roundc = 0;
+	public int roundc = 0;
 
 	public static final char ROT = 'A', GELB = 'B', GRUEN = 'C', BLAU = 'D', VIOLET ='E', SCHWARZ ='F' ;
 
@@ -25,12 +26,18 @@ public class CodeBrett {
 		if(c[0]==code[0]&&c[1]==code[1]&&c[2]==code[2]&&c[3]==code[3]){
 			JOptionPane.showMessageDialog(null, "Herzlichen Glückwunsch!!\nGeschafft in "+(roundc+1)+" Runden!");
 			System.exit(0);
+		}else if (roundc==7 && checkRow(6)[0]!=4) {
+			JOptionPane.showMessageDialog(null, "Leider nicht erraten");
+			////
+			////
+			/* Fehlt ausgabe der richtigen Farben */
+			////
+			////
+			System.exit(0);
 		}
 		int[] ret = new int[2];
 		if(roundc < userset.length){
 			this.userset[this.roundc]=c;
-
-			int fails1=0,fails = 0;
 			for (int i = 0; i < 4; i++)
 			{
 				for (int j = 0; j < 4; j++)

@@ -71,6 +71,9 @@ public class View extends JFrame implements ActionListener{
 
 
 				bz =cb.getColors(i);
+				if(cb.roundc == 7){
+					bz= cb.getColors(0);
+				}
 				for(int j = 0; j < bz.length;j++){
 					
 					if(bz[j]==cb.ROT)
@@ -112,7 +115,6 @@ public class View extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getActionCommand()=="Set"){
-			
 			char[] ca = new char[]{(char) (bstate[0]+'A'),(char) (bstate[1]+'A'),(char) (bstate[2]+'A'),(char) (bstate[3]+'A')};
 			cb.choose(ca);
 			vHC.raisec();
